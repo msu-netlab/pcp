@@ -11,12 +11,16 @@ try:
   g = graph.UndirectedGraph()
   g.newEdges(e)
   g.newVertices(v)
-  res = graph.dijsktra(g, ip1)  
 
-  dist_ret = res[0]
-  dist = dist_ret.get(ip2)
-
-  print ip1+" -> "+ip2+": "+str(dist)+"(s)"
+  if ip1 not in g.vertices():
+    print ip1+" has no measurements yet."
+  if ip2 not in g.vertices():
+    print ip2+" has no measurements yet."
+  else:    
+    res = graph.dijsktra(g, ip1)  
+    dist_ret = res[0]
+    dist = dist_ret.get(ip2)
+    print ip1+" -> "+ip2+": "+str(dist)+"(s)"
 
 
 except Exception, e:
