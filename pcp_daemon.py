@@ -12,9 +12,11 @@ def check_for_cdn(addr):
 	amazon = "cloudfront.net"
 	softlayer = "reverse.softlayer.com"
 	facebook = "fbcdn.net"
+	level3 = "footprint.net"
+	limelight = "llnw.com"
 	host = os.popen('host '+addr).read()
 	#print host
-	if host.find(akamai) != -1 or host.find(amazon) != -1 or host.find(softlayer) != -1 or host.find(facebook) != -1:
+	if host.find(akamai) != -1 or host.find(amazon) != -1 or host.find(softlayer) != -1 or host.find(facebook) != -1 or host.find(level3) != -1 or host.find(limelight) != -1:
 		#print host
 		return True
 	else:
