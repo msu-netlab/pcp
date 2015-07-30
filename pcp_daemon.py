@@ -21,6 +21,10 @@ def check_for_cdn(addr):
 		return False
 
 def main():
+  pid = os.getpid()
+  with open("/tmp/pcp_daemon.txt", "w+") as f:
+    f.write(str(pid))
+
   print "We require that you choose a network interface and ip for the tshark to monitor \n"
   ifconfig = raw_input("Run 'ifconfig' to identify valid network interface and ip? (y/n)")
   if ifconfig == "y":

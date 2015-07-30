@@ -14,7 +14,7 @@ try:
 
   if ip1 not in g.vertices():
     print ip1+" has no measurements yet."
-  if ip2 not in g.vertices():
+  elif ip2 not in g.vertices():
     print ip2+" has no measurements yet."
   else:    
     res = graph.dijsktra(g, ip1)  
